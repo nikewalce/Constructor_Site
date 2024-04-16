@@ -1,0 +1,15 @@
+<!--Наследуем(extendx) от файла шаблона(patten) с помощью шаблонизатора Jinja-->
+{% extends 'main_site/pattern.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <!--    div.classname + Tab-->
+    <div class="sec">
+        <h1>Главная страница</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at doloremque eaque facere iusto magnam, minus molestias nulla possimus, quae, quam rem veritatis. Beatae cum dignissimos ipsum iste sunt veniam?</p>
+        <button class="btn btn-warning">На страницу про нас</button>
+    </div>
+
+    <!--дирректива include позволяет вставить код из другого файла{ % include 'main_site/название файла' %}-->
+{% endblock %}

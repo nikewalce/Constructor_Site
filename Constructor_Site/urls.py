@@ -17,6 +17,9 @@ Including another URLconf
 #подключаем include, чтобы работать с приложениями
 from django.contrib import admin
 from django.urls import path, include
+#копируем для статических файлов https://docs.djangoproject.com/en/5.0/howto/static-files/
+from django.conf import settings
+from django.conf.urls.static import static
 
 #Тут отслеживают адресса
 #при переходе по адресу admin/ будет открываться панель администратора admin.site.urls
@@ -24,4 +27,4 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_site.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

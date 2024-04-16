@@ -1,0 +1,43 @@
+body{
+    background: gray;
+}
+
+aside, main{
+    margin: 0 1.5% 24px 1.5%;
+
+}
+
+aside{
+    background: #181818
+    float: left;
+    width: 17%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+}
+
+aside img{
+    width: 50px;
+    float: left;
+}
+aside ul{list-style: none; }
+aside li{
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+aside a {
+text-decoration: none;
+}
+aside ul li:hover, aside ul a:hover{
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+main{
+    float: right;
+    width: 63%;
+
+}

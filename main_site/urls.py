@@ -7,6 +7,6 @@ from . import views
 #При переходе на главную страницу запускаем метод views. Круглые скобки не нужны(если ставить их, то метод выполняется. А тут нужно обратиться только)
 #При переходе на about обращаемся к функции about метода views
 urlpatterns = [
-    path('', views.index),
-    path('about', views.about)
+    path('', views.index, name='home'),
+    path('about123', views.about, name='about')
 ]
