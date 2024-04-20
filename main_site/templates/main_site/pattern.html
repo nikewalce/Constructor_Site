@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 <body>
+    <main>
+        <!--Шаблонизатор Jinja открыть и закрыть конструкцию блок-->
+        {% block content%}
+        {% endblock %}
+    </main>
     <aside>
         <img src="{% static 'main_site/img/Emm.png' %}" alt="">
         <h3>Навигация</h3>
@@ -26,12 +31,7 @@
             <a href="{% url 'about' %}"><li>Про нас</li></a>
             <a href=""><li>Контакты</li></a>
         </ul>
-    </aside>
-    <main>
-        <!--Шаблонизатор Jinja открыть и закрыть конструкцию блок-->
-        {% block content%}
-        {% endblock %}
-    </main>
 
+    </aside>
 </body>
 </html>

@@ -31,15 +31,17 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-#Тут нужно регестрировать каждое приложение(main_site)
+#Тут нужно регестрировать каждое приложение(main_site, base)
 INSTALLED_APPS = [
-    'main_site',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'main_site',
+    'base',
 ]
 #плагины внутри проекта
 MIDDLEWARE = [
@@ -105,8 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
+#английский язык кода 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 

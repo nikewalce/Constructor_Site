@@ -6,6 +6,9 @@ import sys
 #cd Constructor_Site
 #python manage.py runserver   ctrl + c завершить - запустить локальный сервер
 #python manage.py startapp название приложения - создать приложение
+#python manage.py makemigrations - создать файл миграцию(описание таблицы в БД)
+#python manage.py migrate - выполнить миграцию
+#python manage.py createsuperuser - создать суперпользователя(админа)
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Constructor_Site.settings')
