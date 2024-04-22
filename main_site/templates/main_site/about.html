@@ -2,11 +2,15 @@
 {% extends 'main_site/pattern.html' %}
 
 {% block title %}Про нас{% endblock %}
-
+{% block about%}current{% endblock %}
+<!--обязательно load static, если нужно обращаться к статическим файлам-->
+{% load static %}
 {% block content %}
     <div class="sec">
         <h1>Про нас</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at doloremque eaque facere iusto magnam, minus molestias nulla possimus, quae, quam rem veritatis. Beatae cum dignissimos ipsum iste sunt veniam?</p>
         <button class="btn btn-danger">Нажми</button>
+
+        <img src="{% static 'main_site/img/Emm.png' %}" alt="" class="Emm">
     </div>
 {% endblock %}

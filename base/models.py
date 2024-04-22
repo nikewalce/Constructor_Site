@@ -10,6 +10,7 @@ class Constructor(models.Model):
     #поле в БД, дата и время. (DateField - только дата)
     date = models.DateTimeField('Дата публикации')
 
+    #Магический метод для отображение объектов таблицы в текстовом виде(если убрать, то будут вызываться объекты)
     def __str__(self):
         return self.title
 

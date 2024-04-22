@@ -7,6 +7,6 @@ from . import views
 #При переходе на base/ запускаем метод views. Круглые скобки не нужны(если ставить их, то метод выполняется. А тут нужно обратиться только)
 #'' срабатывает, когда переходят по base/
 urlpatterns = [
-    path('', views.index, name='home'),
-    path('data', views.db, name='db')
+    path('', views.index, name='base'),
+    path('data', views.db, name='db'),
 ]

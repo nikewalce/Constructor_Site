@@ -8,5 +8,5 @@ from . import views
 #При переходе на about обращаемся к функции about метода views
 urlpatterns = [
     path('', views.index, name='home'),
-    path('about123', views.about, name='about')
+    path('about', views.about, name='about')
 ]

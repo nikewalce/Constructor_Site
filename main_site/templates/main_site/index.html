@@ -1,8 +1,8 @@
 <!--Наследуем(extendx) от файла шаблона(patten) с помощью шаблонизатора Jinja-->
 {% extends 'main_site/pattern.html' %}
-
+{% block home %}current{% endblock %}
 {% block title %}{{title}}{% endblock %}
-
+{% load static %}
 {% block content %}
     <!--    div.classname + Tab-->
     <div class="sec">

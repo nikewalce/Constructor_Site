@@ -1,28 +1,25 @@
 <!--Наследуем(extendx) от файла шаблона(patten) с помощью шаблонизатора Jinja-->
 {% extends 'main_site/pattern.html' %}
-
-{% block title %}{{title}}{% endblock %}
+{% block base %}current{% endblock %}
+{% block title %}База данных Constructor{% endblock %}
 
 {% block content %}
     <!--    div.classname + Tab-->
     <div class="sec">
         <!--        {{ передача данных из views.py -->
-        <h1>{{title}}</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at doloremque eaque facere iusto magnam, minus molestias nulla possimus, quae, quam rem veritatis. Beatae cum dignissimos ipsum iste sunt veniam?</p>
-        <button class="btn btn-warning">На страницу про нас</button>
+        <h1>База данных Constructor</h1>
     </div>
-<!--        вывод каждого элемента циклом. Если элемент равен используем фильтер upper-->
-    {% for element in values%}
-        {% if element == 'One' %}
-            {% filter upper %}
-                <p>{{element}}</p>
-            {% endfilter %}
-        {% endif %}
-    {% endfor %}
-<!--    использование 2 способа фильтра |upper-->
-    {% for el in obj.values %}
-        <p class="obj_el">{{el|upper}}</p>
-    {% endfor %}
+    {# Если в таблице есть записи, выводим. Если нет, то выводим p #}
+    {% if all_object %}
+        {% for el in all_object %}
+            <div>
+                <h3>{{el.title}}</h3>
+                <p>{{el.full_text}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>В таблице записей нет</p>
+    {% endif %}
 
     <!--дирректива include позволяет вставить код из другого файла{ % include 'main_site/название файла' %}-->
 {% endblock %}

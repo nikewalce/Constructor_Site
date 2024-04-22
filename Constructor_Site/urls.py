@@ -26,6 +26,7 @@ from django.conf.urls.static import static
 #при переходе по адрессу '' (главная страница) переходим в main_site(передаем работу этому приложению)
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('base/admin/', admin.site.urls),
     path('', include('main_site.urls')),
     path('base/', include('base.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
