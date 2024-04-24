@@ -8,6 +8,9 @@
     <div class="sec">
         <!--        {{ передача данных из views.py -->
         <h1>База данных Constructor</h1>
+        <a href="{% url 'create' %}">
+            <button>Добавить запись</button>
+        </a>
     </div>
     {# Если в таблице есть записи, выводим. Если нет, то выводим p #}
     {% if all_object %}

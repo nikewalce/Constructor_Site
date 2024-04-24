@@ -1,0 +1,31 @@
+<!--Наследуем(extendx) от файла шаблона(patten) с помощью шаблонизатора Jinja-->
+{% extends 'main_site/pattern.html' %}
+{% block base %}current{% endblock %}
+{% block title %}Форма для добавления записей в БД{% endblock %}
+
+{% block content %}
+    <!--    div.classname + Tab-->
+    <div class="sec">
+        <!--        {{ передача данных из views.py -->
+        <h1>Форма для добавления записей в БД</h1>
+<!--        метод передачи данных post. action - страница на которой будем обрабатывать
+        данные из формы, если его нет, тогда проверка будет происходить на текущей странице-->
+        <form method="post">
+          {# Обязательное подключение токена. Формы подключены из forms.py  #}
+          {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
+<!--          <input type="text" placeholder="Название"><br>-->
+<!--          <textarea placeholder="Полный текст"></textarea><br>-->
+<!--          <input type="data" placeholder="Дата"><br>-->
+<!--          <input type="time" placeholder="Время"><br>-->
+<!--          submit перезагружает страницу и отправляет запрос на сервер-->
+          <button class="btn" type="submit">Добавить запись</button>
+        </form>
+    </div>
+
+
+    <!--дирректива include позволяет вставить код из другого файла{ % include 'main_site/название файла' %}-->
+{% endblock %}

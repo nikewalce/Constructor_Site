@@ -9,4 +9,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='base'),
     path('data', views.db, name='db'),
+    path('create', views.create, name='create')
 ]
