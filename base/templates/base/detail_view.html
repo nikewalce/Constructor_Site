@@ -1,0 +1,18 @@
+<!--Наследуем(extendx) от файла шаблона(patten) с помощью шаблонизатора Jinja-->
+{% extends 'main_site/pattern.html' %}
+{% block base %}current{% endblock %}
+{% block title %}{{model_chair.title}}{% endblock %}
+
+{% block content %}
+    <!--    div.classname + Tab-->
+    <div class="sec">
+        <!--        {{ передача данных из views.py
+         Название взято из класса BaseDetailView переменной context_object_name-->
+        <h1>{{model_chair.title}}</h1>
+        <p>{{model_chair.date}}</p>
+        <p>{{model_chair.full_text}}</p>
+    </div>
+
+
+    <!--дирректива include позволяет вставить код из другого файла{ % include 'main_site/название файла' %}-->
+{% endblock %}

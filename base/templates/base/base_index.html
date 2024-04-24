@@ -18,6 +18,8 @@
             <div>
                 <h3>{{el.title}}</h3>
                 <p>{{el.full_text}}</p>
+                {# Обращение к base\urls int:pk после пробела id элемента, можно написать 1,2 и т.д. #}
+                <a href="{% url 'base_detail' el.id %}" class="">Детальный просмотр</a>
             </div>
         {% endfor %}
     {% else %}
