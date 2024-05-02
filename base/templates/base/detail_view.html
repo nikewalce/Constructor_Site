@@ -11,6 +11,8 @@
         <h1>{{model_chair.title}}</h1>
         <p>{{model_chair.date}}</p>
         <p>{{model_chair.full_text}}</p>
+        <a href="{% url 'base_delete' model_chair.id %}">Удалить запись</a>
+        <a href="{% url 'base_update' model_chair.id %}">Редактировать запись</a>
     </div>
 
 

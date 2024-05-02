@@ -4,8 +4,8 @@ from django.http import HttpResponse
 from .models import Constructor
 #Импортируем обработчик формы
 from .forms import ConstructorForm
-#На основе этого метода можно создавать динамические страницы
-from django.views.generic import DetailView
+#На основе этого метода можно создавать динамические страницы(DatailView), обновлять страницы(UpdateView), удалять(DeleteView)
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 #отвечает за те методы, которые будут вызваны при переходе пользователя на определенную страницу
 #обязательно прописывать аргумент запроса(request)
@@ -23,13 +23,33 @@ def index(request):
 def db(request):
     return HttpResponse('<h1>Проверка base/data </h1>')
 
-#Можно использовать ListView, тогда будет вызываться вся таблица
+#Динамическая страница(base/1, base/2 и т.д.Можно использовать ListView, тогда будет вызываться вся таблица
 class BaseDetailView(DetailView):
+    #Работа с моделью Constructor
     model = Constructor
+    # указание шаблона, который будет выводится
     template_name = 'base/detail_view.html'
     #Имя ключа по которому можно передавать определенную запись внутрь шаблона
     context_object_name = 'model_chair'
 
+class BaseUpdateView(UpdateView):
+    # Работа с моделью Constructor
+    model = Constructor
+    # указание шаблона, который будет выводится
+    template_name = 'base/create.html'
+
+    #отображение полей в форме
+    #fields = ['title', 'full_text', 'date']
+
+    form_class = ConstructorForm
+
+class BaseDeleteView(DeleteView):
+    # Работа с моделью Constructor
+    model = Constructor
+    # указание шаблона, который будет выводится
+    template_name = 'base/base-delete.html'
+    #переадресация пользователя после удаления записи
+    success_url = '/base/'
 
 def create(request):
     error=''

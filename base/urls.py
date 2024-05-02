@@ -12,4 +12,6 @@ urlpatterns = [
     path('data', views.db, name='db'),
     path('create', views.create, name='create'),
     path('<int:pk>', views.BaseDetailView.as_view(), name='base_detail'),
+    path('<int:pk>/update', views.BaseUpdateView.as_view(), name='base_update'),
+    path('<int:pk>/delete', views.BaseDeleteView.as_view(), name='base_delete'),
 ]
